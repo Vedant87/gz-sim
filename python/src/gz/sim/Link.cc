@@ -155,6 +155,25 @@ void defineSimLink(py::object module)
       py::arg("position"),
       "Add a force expressed in world coordinates and applied at "
       "an offset from the center of mass of the link.")
+  .def("add_force",
+      py::overload_cast<EntityComponentManager &, const math::Vector3d &>
+        (&gz::sim::Link::AddForce, py::const_),
+      py::arg("ecm"),
+      py::arg("force"),
+      "Add a force expressed in link's centre of"
+      "mass coordinates and applied at the "
+      "center of mass of the link.")
+  .def("add_link_force",
+      py::overload_cast<EntityComponentManager &,
+                        const math::Vector3d &,
+                        const math::Vector3d &>
+                        (&gz::sim::Link::AddLinkForce, py::const_),
+      py::arg("ecm"),
+      py::arg("force"),
+      py::arg("position"),
+      "Add a force expressed in  coorlink's center of mass"
+      "coordinates and applied at "
+      "an offset from the center of mass of the link.")
   .def("add_world_wrench",
       py::overload_cast<EntityComponentManager &,
                         const math::Vector3d &,

@@ -441,7 +441,7 @@ void Link::AddWorldForce(EntityComponentManager &_ecm,
 }
 
 //////////////////////////////////////////////////
-void Link::AddLinkForce(EntityComponentManager &_ecm,
+void Link::AddForce(EntityComponentManager &_ecm,
                         const math::Vector3d &_force) const
 {
   auto worldPose = _ecm.ComponentData<components::WorldPose>(this->dataPtr->id)

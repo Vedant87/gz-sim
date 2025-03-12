@@ -318,7 +318,7 @@ namespace gz
       /// \param[in] _ecm Mutable Entity-component manager.
       /// \param[in] _force Force to be applied expressed in link's
       /// center of mass coordinates
-      public: void AddLinkForce(EntityComponentManager &_ecm,
+      public: void AddForce(EntityComponentManager &_ecm,
                                  const math::Vector3d &_force) const;
 
       /// \brief Add a force expressed in link's center of mass coordinates
